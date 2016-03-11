@@ -174,7 +174,7 @@ class NetworkMonitorPedrpcServer (pedrpc.server):
         self.log("initializing capture for test case #%d" % test_number)
 
         # open the capture device and set the BPF filter.
-        self.pcap = pcapy.open_live(self.device, -1, 1, 100)
+        self.pcap = pcapy.open_live(self.device, 65535, 1, 100)
         self.pcap.setfilter(self.filter)
 
         # instantiate the capture thread.
